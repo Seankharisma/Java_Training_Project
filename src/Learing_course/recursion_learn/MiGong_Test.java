@@ -1,4 +1,4 @@
-package Training;
+package Learing_course.recursion_learn;
 
 import java.util.Random;
 

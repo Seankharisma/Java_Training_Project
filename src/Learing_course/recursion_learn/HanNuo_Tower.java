@@ -1,4 +1,4 @@
-package Training;
+package Learing_course.recursion_learn;
 
 public class HanNuo_Tower {
     public static void main(String[] args) {
