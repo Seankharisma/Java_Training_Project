@@ -1,6 +1,6 @@
-package Learing_course.recursion_learn;
+package learing_course.recursion_learn;
 
-public class HanNuo_Tower {
+public class HanNuoTower {
     public static void main(String[] args) {
      Tower tower=new Tower();
      tower.moveNum(2,'A','B','C');

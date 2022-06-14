@@ -1,4 +1,4 @@
-package Learing_course.recursion_learn;
+package learing_course.recursion_learn;
 
 import java.util.Random;
 
@@ -8,7 +8,7 @@ import java.util.Random;
  * @author Sean li
  * @version 1.0
  */
-public class MiGong_Test {
+public class MiGongTest {
     /**
     * 解破解迷宫游戏开启入口
     *
