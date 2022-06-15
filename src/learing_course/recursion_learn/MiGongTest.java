@@ -10,10 +10,11 @@ import java.util.Random;
  */
 public class MiGongTest {
     /**
-    * 解破解迷宫游戏开启入口
-    *
-    * */
-     public static void main(String[] args) {
+     * 解破解迷宫游戏开启入口
+     *
+     * @param args the input arguments
+     */
+    public static void main(String[] args) {
 
          //输入信息的话正式测试时候使用
 //         Scanner scanner=new Scanner(System.in);
@@ -41,25 +42,31 @@ public class MiGongTest {
          miGong.printArray(miGongArray,flg);
     }
 }
+
 /**
-* 创建迷宫游戏类
-*
-* */
+ * 创建迷宫游戏类
+ */
 class MiGong_Game{
     /**
-    * 创建迷宫
-    * */
-    public int[][] create_MiGong(int x_coordinate,int y_coordinate){
+     * 创建迷宫
+     *
+     * @param x_coordinate the x coordinate
+     * @param y_coordinate the y coordinate
+     * @return the int [ ] [ ]
+     */
+        public int[][] create_MiGong(int x_coordinate,int y_coordinate){
         int [][] miGongArray=new int[x_coordinate][y_coordinate];
         Random random=new Random();
-        /**数字越大，出现迷宫内障碍物的概率越小
+        /*
+         * 数字越大，出现迷宫内障碍物的概率越小
          * （rand_range-3）/rand_range的概率生成能走动的空间
          * rand_range>=3起步设置
-         */
+         *
+         * */
         int rand_range=7;
         //生成在rand_range范围的随机数，初始值为0
-        int rand_Parameter=0;
-        /**
+        int rand_Parameter;
+        /*
          * 迷宫墙壁的创建
          *
          * */
@@ -75,7 +82,7 @@ class MiGong_Game{
                     miGongArray[i][j] = 0;
                 }
                 else{
-                    /**
+                    /*
                      * 迷宫里障碍物的生成
                      */
                     //设置0为可行走空间
@@ -93,9 +100,13 @@ class MiGong_Game{
         printArray(miGongArray,1);
         return miGongArray;
     }
+
     /**
      * 显示迷宫
-     * */
+     *
+     * @param miGongArray the mi gong array
+     * @param flg         the flg
+     */
     public void printArray(int [][]miGongArray,int flg){
         if(flg==1) {
             System.out.println("==========================迷宫生成，这是一个"+(miGongArray.length)+"*"+miGongArray[(miGongArray.length-1)].length+"迷宫====================");
@@ -107,17 +118,23 @@ class MiGong_Game{
         else{
             System.out.println("==========================破解迷宫失败！死迷宫！====================");
         }
-        for (int i=0;i<miGongArray.length;i++){
+        for(int i=0;i<miGongArray.length;i++){
             for(int j=0;j<miGongArray[i].length;j++){
-            System.out.print(miGongArray[i][j]+"\t");
+               System.out.print(miGongArray[i][j]+"\t");
             }
             System.out.println();
         }
     }
+
     /**
      * 开始走迷宫
      * 选择走法则是 右>下>左>上
-     * */
+     *
+     * @param miGongArray the mi gong array
+     * @param i           the
+     * @param j           the j
+     * @return the boolean
+     */
     public boolean findWay(int [][]miGongArray,int i,int j){
         //每次走之前判断：终点的状态是否被走过的时候直接返回true，5表示正在走的位置
         if(miGongArray[miGongArray.length-2][miGongArray[miGongArray.length-2].length-2]==5){
