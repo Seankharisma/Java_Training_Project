@@ -83,6 +83,7 @@ class Game{
 
             }
             System.out.println("返回上一层菜单");
+
      }
      /**
       * 人机对战
@@ -99,27 +100,27 @@ class Game{
      /**
       * 两台电脑对决
       * **/
-    public void VsComputer2(){
-        String [] resultArray;
-        Random random=new Random();
-        int pc1=random.nextInt(3);
-        int pc2=random.nextInt(3);
-        resultArray=rulerCompare(pc1,pc2);
+     public void VsComputer2() {
+         String[] resultArray;
+         Random random = new Random();
+         int pc1 = random.nextInt(3);
+         int pc2 = random.nextInt(3);
+         resultArray = rulerCompare(pc1, pc2);
 
-        System.out.println("pc1"+resultArray[0]+"了,pc1"+resultArray[1]+",pc2"+resultArray[2]);
-        System.out.println("战绩：赢->"+this.winCount+"局  输->"+this.lossCount+"局  平->"+this.drawCount+"局");
-        System.out.println("总局数："+this.count);
-        //pc1胜利的时候停止游戏
-        if(resultArray[0].equals("赢")) {
-            this.count=0;
-            this.winCount=0;
-            this.lossCount=0;
-            this.drawCount=0;
-        }else{
-            //不赢是不是，我继续！
-            VsComputer2();
-        }
-    }
+         System.out.println("pc1" + resultArray[0] + "了,pc1" + resultArray[1] + ",pc2" + resultArray[2]);
+         System.out.println("战绩：赢->" + this.winCount + "局  输->" + this.lossCount + "局  平->" + this.drawCount + "局");
+         System.out.println("总局数：" + this.count);
+         //pc1胜利的时候停止游戏
+         if (resultArray[0].equals("赢")) {
+             this.count = 0;
+             this.winCount = 0;
+             this.lossCount = 0;
+             this.drawCount = 0;
+         } else {
+             //不赢是不是，我继续！
+             VsComputer2();
+         }
+     }
     /**
      * 游戏规则
      * */

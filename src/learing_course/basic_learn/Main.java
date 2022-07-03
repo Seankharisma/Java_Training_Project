@@ -1,5 +1,7 @@
 package learing_course.basic_learn;
 
+import java.util.Arrays;
+
 /**
  * The type Main.
  *
@@ -147,25 +149,23 @@ public class Main {
 //        }
         //this的学习
         T t1=new T("MM",90);
-        System.out.println("名称name"+t1.Test_name+"\n"+"年龄age："+t1.Test_age);
+        System.out.println("名称name"+t1.getTest_name()+"\n"+"年龄age："+t1.getTest_age());
 
         T t2=new T();
-        System.out.println("名称name"+t2.Test_name+"\n"+"年龄age："+t2.Test_age);
+        System.out.println("名称name"+t2.getTest_name()+"\n"+"年龄age："+t2.getTest_age());
 
-
-
-
-
-
-
-
-
-
+        int []a= {45,78,2,5,7,88,1};
+        BubbleSort bubbleSort=new BubbleSort();
+//        bubbleSort.sortArray(a);
+//        bubbleSort.printArray(a);
+        Arrays.sort(a);
+        bubbleSort.printArray(a);
     }
 }
 class T{
-    String Test_name;
-    int Test_age;
+    //封装一下,创建Test_name、Test_age的get、set方法
+    private String Test_name;
+    private int Test_age;
     public T(){
         this("JACK",20);
         System.out.println("This 关键字的测试");
@@ -176,5 +176,53 @@ class T{
         this.Test_age=Test_age;
 
     }
+    public String getTest_name() {
+        return Test_name;
+    }
+
+    public void setTest_name(String test_name) {
+        Test_name = test_name;
+    }
+
+    public int getTest_age() {
+        return Test_age;
+    }
+
+    public void setTest_age(int test_age) {
+        Test_age = test_age;
+    }
+
+}
+/**
+ * 冒泡排序
+ * */
+class BubbleSort {
+    public BubbleSort() {
+    }
+
+    public void sortArray(int[] arry) {
+        int temp;
+        for (int i = 0; i < arry.length; i++) {
+            for (int j = 0; j < arry.length - 1 - i; j++) {
+                if (arry[j] > arry[j + 1]) {
+                    temp = arry[j];
+                    arry[j] = arry[j + 1];
+                    arry[j + 1] = temp;
+                }
+
+            }
+
+        }
+
+    }
+
+    public void printArray(int []arry){
+        for (int i = 0; i < arry.length; i++) {
+            System.out.print(arry[i]+"\t");
+        }
+
+    }
+
+
 
 }
