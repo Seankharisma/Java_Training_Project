@@ -53,3 +53,51 @@ values
     ('A003','Zoe','teacher',69),
     ('A004','Cindy','singer',34)
 ;
+
+create table if not exists test_pj(
+        ID VARCHAR not null,
+        name VARCHAR not null,
+         age integer,
+         job varchar
+);
+
+insert into test_pj
+(id,name,age,job)
+values
+    ('A001','T64_週次',27,'dancer'),
+    ('A001','T64_月次',27,'dancer'),
+    ('A001','T64_月次',27,'dancer')
+;
+/*
+name asc:
+T64_月次
+T64_週次
+
+nmae desc:
+T64_週次
+T64_月次
+
+*/
+SELECT
+    id,
+    age,
+    job,
+    array_to_string(ARRAY_AGG(DISTINCT name ORDER by name desc),chr(10)) as name
+FROM
+    test_pj
+GROUP BY id,age,job
+;
+
+
+/*
+name asc:
+T64_月次
+T64_月次
+T64_週次
+
+nmae desc:
+T64_週次
+T64_月次
+T64_月次
+*/
+SELECT name FROM test_pj ORDER by name desc;
