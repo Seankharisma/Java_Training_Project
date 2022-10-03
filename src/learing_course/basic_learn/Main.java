@@ -202,7 +202,12 @@ class BubbleSort {
 
     public void sortArray(int[] arry) {
         int temp;
-        for (int i = 0; i < arry.length; i++) {
+        /**
+         * 双指针：
+         * i 从第一个元素开始～到数组长度-1
+         * j从第二个元素开始～到数组长度-1-当前i的值
+         * */
+        for (int i = 0; i < arry.length-1; i++) {
             for (int j = 0; j < arry.length - 1 - i; j++) {
                 if (arry[j] > arry[j + 1]) {
                     temp = arry[j];
@@ -213,7 +218,6 @@ class BubbleSort {
             }
 
         }
-
     }
 
     public void printArray(int []arry){
