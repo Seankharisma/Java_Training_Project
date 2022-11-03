@@ -14,6 +14,8 @@ public class LocalInnerClass {
 
 class Out0002{
     //外部类
+
+
     private int n1=100;
     private void m2(){}
     public void m1(){//方法
